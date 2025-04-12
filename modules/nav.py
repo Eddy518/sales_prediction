@@ -7,15 +7,13 @@ def HomeNav():
 
 
 def LoginNav():
-    st.sidebar.page_link("pages/account.py", label="Account", icon="🔐")
+    st.sidebar.page_link("./pages/account.py", label="Account", icon="🔐")
 
 
-def Page1Nav():
-    st.sidebar.page_link("pages/page1.py", label="Page 1", icon="✈️")
-
-
-def Page2Nav():
-    st.sidebar.page_link("pages/page2.py", label="Sales Predictor", icon="📈")
+def SalesPredictorNav():
+    st.sidebar.page_link(
+        "./pages/sales_predictor.py", label="Sales Predictor", icon="📈"
+    )
 
 
 def MenuButtons(user_roles=None):
@@ -31,14 +29,4 @@ def MenuButtons(user_roles=None):
 
     # Show the other page navigators depending on the users' role.
     if ss["authentication_status"]:
-
-        # (1) Only the admin role can access page 1 and other pages.
-        # In a user roles get all the usernames with admin role.
-        admins = [k for k, v in user_roles.items() if v == "admin"]
-
-        # Show page 1 if the username that logged in is an admin.
-        if ss.username in admins:
-            Page1Nav()
-
-        # (2) users with user and admin roles have access to page 2.
-        Page2Nav()
+        SalesPredictorNav()

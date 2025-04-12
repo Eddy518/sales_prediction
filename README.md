@@ -98,11 +98,10 @@ A web-based application that uses machine learning to predict sales based on pro
 ```
 sales_prediction/
 ├── modules/
-│   └── nav.py               # Navigation components
+│   |── nav.py               # Navigation components
+│   ├── email_alerts.py      # Email alerts configuration
 ├── pages/
-│   ├── page1.py             # Admin-only page
-│   └── page2.py             # Sales Predictor page
-├── streamlit_app.py         # Main application entry
+│   └── sales_predictor.py   # Sales Predictor page
 ├── lm_model_prediction.sav  # Pre-trained ML model
 ├── config.yaml              # Authentication configuration
 └── requirements.txt         # Dependencies

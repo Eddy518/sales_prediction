@@ -49,7 +49,6 @@ with login_tab:
     if ss["authentication_status"]:
         authenticator.logout(location="main")
         st.write(f'Welcome *{ss["name"]}*')
-        # st.switch_page("pages/page2.py")
 
     elif ss["authentication_status"] is False:
         st.error("Username/password is incorrect")
